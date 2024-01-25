@@ -6,7 +6,8 @@ export default defineConfig({
   plugins: [react()],
   test: {
     // jest config here
-    reporters: ['verbose']
+    reporters: ['verbose'],
+    environment: 'jsdom',
+    globals: true
   },
-  // reporter: [{ formatter: 'verbose', logLevel: 4 }]
 })
