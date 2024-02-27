@@ -1,6 +1,7 @@
 import './App.css';
 import ChatLog from './components/ChatLog'
 import chatMessages from './data/messages.json';
+import React from 'react';
 
 const App = () => {
   const [chatEntries, setChatEntries] = React.useState(chatMessages);
