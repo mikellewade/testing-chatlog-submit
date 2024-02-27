@@ -1,5 +1,7 @@
 import React from 'react';
-import '@testing-library/jest-dom/extend-expect';
+// import '@testing-library/jest-dom/extend-expect';
+// import '@testing-library/jest-dom/vitest/extend-expect';
+import '@testing-library/jest-dom';
 import ChatEntry from './ChatEntry';
 import { render, screen } from '@testing-library/react';
 
