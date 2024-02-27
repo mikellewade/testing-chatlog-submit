@@ -1,4 +1,3 @@
-import React from 'react';
 import './ChatEntry.css';
 import PropTypes from 'prop-types';
 import TimeStamp from './TimeStamp';
@@ -19,7 +18,7 @@ const ChatEntry = ({id, sender, body, timeStamp, liked, setLikes }) => {
 };
 
 ChatEntry.propTypes = {
-  //Fill with correct proptypes
+  // Fill with correct proptypes
 };
 
 export default ChatEntry;
