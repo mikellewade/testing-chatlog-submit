@@ -1,5 +1,5 @@
-import React from 'react'
-import ChatEntry from './ChatEntry'
+import ChatEntry from './ChatEntry';
+import PropTypes from 'prop-types';
 
 function ChatLog({ entries, setLikes }) {
     const ChatEntryComponents = entries.map((chatEntry) => {
@@ -12,17 +12,30 @@ function ChatLog({ entries, setLikes }) {
                 body={chatEntry.body}
                 timeStamp={chatEntry.timeStamp}
                 liked={chatEntry.liked}
-                setLikes = {setLikes}
+                setLikes={setLikes}
             />
             </li>
         );
-    })
+    });
     return (
         <section>
             <h2> Chat Log </h2>
             <ul> { ChatEntryComponents } </ul>
         </section>
-    )
+    );
 };
 
-export default ChatLog
+ChatLog.propTypes = {
+    entries: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            sender: PropTypes.string.isRequired,
+            body: PropTypes.string.isRequired,
+            timeStamp: PropTypes.string.isRequired, // or Date if it is a Date object
+            liked: PropTypes.bool.isRequired,
+        })
+    ).isRequired,
+    setLikes: PropTypes.func,  // 'setLikes' should be a required function
+};
+
+export default ChatLog;
