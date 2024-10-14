@@ -1,5 +1,5 @@
 import './App.css';
-import ChatLog from './components/ChatLog'
+import ChatLog from './components/ChatLog';
 import chatMessages from './data/messages.json';
 import React from 'react';
 
@@ -9,18 +9,20 @@ const App = () => {
     setChatEntries(prevChatEntries => {
       const updatedChatEntries = prevChatEntries.map(ChatEntry =>{
         return ChatEntry.id === id ? {...ChatEntry, liked: !ChatEntry.liked} : ChatEntry;
-      })
+      });
+
       return updatedChatEntries;
-    })
-  }
+    });
+  };
+
   const totalLikes = () =>{
-    let counter = 0
-    for (let chat of chatEntries){
+    let counter = 0;
+    for (let chat of chatEntries) {
       if(chat.liked){
-        counter += 1
+        counter += 1;
       }
     }
-    return counter
+    return counter;
   };
   
   return (
